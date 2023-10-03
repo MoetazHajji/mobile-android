@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidProject</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="forgetpassword">Do You Have a Problem Signing in?</string>
+    <string name="alreadyhvacc">Already Have Account? Signin</string>
+    <string name="donthvacc">Don\'t Have Account? Signup</string>
 </resources>
