@@ -66,7 +66,7 @@
                     android:ems="10"
                     android:textSize="20dp"
                     android:inputType="text"
-                    android:text="Firstname" />
+                    android:text="Moetaz" />
 
                 <TextView
                     android:id="@+id/lastnameTxt"
@@ -82,17 +82,17 @@
                     android:ems="10"
                     android:textSize="20dp"
                     android:inputType="text"
-                    android:text="Lastname" />
+                    android:text="Hajji" />
 
                 <TextView
-                    android:id="@+id/addnameTxt"
+                    android:id="@+id/additionalNameTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Additional Name*"
                     android:layout_marginTop="10dp"/>
 
                 <EditText
-                    android:id="@+id/addnameInput"
+                    android:id="@+id/additionalNameInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"

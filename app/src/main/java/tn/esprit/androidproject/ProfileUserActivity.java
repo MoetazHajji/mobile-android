@@ -15,14 +15,14 @@ public class ProfileUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_user);
 
-//        editProfile.findViewById(R.id.editProfile);
-//        editProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(ProfileUserActivity.this, EditProfileActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        editProfile = findViewById(R.id.editProfileButton);
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileUserActivity.this, EditProfileUserActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
