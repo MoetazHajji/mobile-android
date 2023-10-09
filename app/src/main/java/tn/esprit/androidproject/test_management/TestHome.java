@@ -29,26 +29,28 @@ public class TestHome extends AppCompatActivity {
     LinearLayout hiddenView2;
     CardView cardView2;
 
+    TextView quiz1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_home);
-//        quiz1 = findViewById(R.id.quiz1);
-//
-//        quiz1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(TestHome.this, Test.class);
-//                startActivity(intent);
-//            }
-//        });
+        quiz1 = findViewById(R.id.quiz1);
+
+        quiz1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TestHome.this, Test.class);
+                startActivity(intent);
+            }
+        });
 
 
-        cardView = findViewById(R.id.base_cardview);
-        arrow = findViewById(R.id.arrow_button);
-        hiddenView = findViewById(R.id.hidden_view);
+//        cardView = findViewById(R.id.base_cardview);
+//        arrow = findViewById(R.id.arrow_button);
+//        hiddenView = findViewById(R.id.hidden_view);
 
-        arrow.setOnClickListener(view -> {
+      /*  arrow.setOnClickListener(view -> {
             // If the CardView is already expanded, set its visibility
             // to gone and change the expand less icon to expand more.
             if (hiddenView.getVisibility() == View.VISIBLE) {
@@ -115,7 +117,7 @@ public class TestHome extends AppCompatActivity {
                 hiddenView2.setVisibility(View.VISIBLE);
                 arrow2.setImageResource(R.drawable.drop_down_arrow);
             }
-        });
+        });*/
 
 
 

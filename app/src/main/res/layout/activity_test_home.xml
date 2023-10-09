@@ -6,12 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".test_management.TestHome"
     android:background="@drawable/background_violet"
+
     >
-
-
-
-
-
 
 
         <LinearLayout
@@ -96,7 +92,7 @@
                 app:cardBackgroundColor="#D8BFD8"
                 android:layout_gravity="center"
                 app:cardElevation="4dp"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="10dp"
                 android:background="@drawable/rounded_cardview_background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
