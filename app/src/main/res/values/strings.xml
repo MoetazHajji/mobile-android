@@ -5,4 +5,8 @@
     <string name="forgetpassword">Do You Have a Problem Signing in?</string>
     <string name="alreadyhvacc">Already Have Account? Signin</string>
     <string name="donthvacc">Don\'t Have Account? Signup</string>
+    <string-array name="brew_array">
+        <item>Devops Engineer</item>
+        <item>Full Stack Developer</item>
+    </string-array>
 </resources>

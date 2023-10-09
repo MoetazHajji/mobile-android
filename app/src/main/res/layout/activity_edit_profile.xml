@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileUserActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="3dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="X   "
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/EditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Info"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/firstnameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Firstname*"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/firstnameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="20dp"
+                    android:inputType="text"
+                    android:text="Firstname" />
+
+                <TextView
+                    android:id="@+id/lastnameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lastname*"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/lastnameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="20dp"
+                    android:inputType="text"
+                    android:text="Lastname" />
+
+                <TextView
+                    android:id="@+id/addnameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Additional Name*"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/addnameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="20dp"
+                    android:inputType="text"
+                    android:text="Additional Name"
+                    />
+
+                <TextView
+                    android:id="@+id/headlineTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Headline*"
+                    android:layout_marginTop="15dp"/>
+
+                <EditText
+                    android:id="@+id/headLineInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="20dp"
+                    android:inputType="text"
+                    android:text="IT Engineering 4th grade at ESPRIT" />
+
+                <TextView
+                    android:id="@+id/CurrentPosition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Current Position"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"/>
+
+
+                <TextView
+                    android:id="@+id/Position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Position*"
+                    android:layout_marginTop="15dp"/>
+
+                <Spinner
+                    android:id="@+id/positionSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/brew_array"
+                    android:minHeight="30dp"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:id="@+id/addPosition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/MidnightBlue"
+                    android:text="+ Add new position"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"/>
+
+                <CheckBox
+                    android:id="@+id/showPosition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show current company in my intro" />
+
+
+                <TextView
+                    android:id="@+id/educationTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Education"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"/>
+
+
+                <TextView
+                    android:id="@+id/education"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Education*"
+                    android:layout_marginTop="15dp"/>
+
+                <EditText
+                    android:id="@+id/educationInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="20dp"
+                    android:inputType="textMultiLine"
+                    android:text="Ecole supérieure Privée d'Ingénierie et Technologie - Esprit" />
+
+                <TextView
+                    android:id="@+id/addEducation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/MidnightBlue"
+                    android:text="+ Add new education"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"/>
+
+                <CheckBox
+                    android:id="@+id/showEducation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show education in my intro" />
+
+                <TextView
+                    android:id="@+id/locationTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/countyRegion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Country/Region*"
+                    android:layout_marginTop="15dp"/>
+
+                <EditText
+                    android:id="@+id/countryRegionInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="20dp"
+                    android:inputType="text"
+                    android:text="Tunisia" />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="City*"
+                    android:layout_marginTop="15dp"/>
+
+                <EditText
+                    android:id="@+id/cityInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="20dp"
+                    android:inputType="text"
+                    android:text="Ariana" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
