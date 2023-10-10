@@ -1,8 +1,10 @@
-package tn.esprit.androidproject;
+package tn.esprit.androidproject.ProfileUser;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import tn.esprit.androidproject.R;
 
 public class PositionActivity extends AppCompatActivity {
 

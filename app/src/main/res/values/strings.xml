@@ -9,4 +9,13 @@
         <item>Devops Engineer</item>
         <item>Full Stack Developer</item>
     </string-array>
+    <string-array name="job_title">
+        <item>Full-time</item>
+        <item>Part-time</item>
+        <item>Self-employed</item>
+        <item>Freelance</item>
+        <item>Contract</item>
+        <item>Internship</item>
+        <item>Seasonal</item>
+    </string-array>
 </resources>

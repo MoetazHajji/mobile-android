@@ -1,4 +1,4 @@
-package tn.esprit.androidproject;
+package tn.esprit.androidproject.ProfileUser;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import tn.esprit.androidproject.R;
 
 public class EditProfileUserActivity extends AppCompatActivity {
     TextView addEducation;

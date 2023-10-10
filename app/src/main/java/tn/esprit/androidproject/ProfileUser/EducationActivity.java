@@ -1,18 +1,22 @@
-package tn.esprit.androidproject;
+package tn.esprit.androidproject.ProfileUser;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
 import java.util.Calendar;
 
+import tn.esprit.androidproject.R;
+
 public class EducationActivity extends AppCompatActivity implements View.OnClickListener{
     EditText endDate;
     EditText startDate;
+    Button addSkill;
     private int mYear, mMonth, mDay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,7 @@ public class EducationActivity extends AppCompatActivity implements View.OnClick
 
         endDate=(EditText)findViewById(R.id.endDateInput);
         startDate=(EditText)findViewById(R.id.startDateInput);
+        addSkill =(Button)findViewById(R.id.addSkillButton);
 
         startDate.setOnClickListener(this);
         endDate.setOnClickListener(this);

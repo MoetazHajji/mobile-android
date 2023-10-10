@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EducationActivity">
+    tools:context=".ProfileUser.EducationActivity">
 
-    <!-- Content ConstraintLayout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contentLayout"
         android:layout_width="match_parent"
@@ -213,13 +212,25 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Save Button ConstraintLayout -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/saveButtonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/white">
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="17dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="17dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/saveButton"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
-    tools:context=".ProfileUserActivity">
+    tools:context=".ProfileUser.ProfileUserActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -222,11 +222,11 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
+                            android:layout_margin="14dp"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/passwordText4"
+                                android:id="@+id/passwordTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -235,7 +235,7 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/changeText4"
+                                android:id="@+id/changePwd"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -260,20 +260,20 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/passwordText1"
+                                android:id="@+id/phoneNumberTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Password:"
+                                android:text="Phone:"
                                 android:textColor="@color/MidnightBlue"
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/changeText"
+                                android:id="@+id/phoneNumberText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Change"
+                                android:text="+216 94089019"
                                 android:textAlignment="viewEnd"
                                 android:textColor="#5B5B5B"
                                 android:textSize="18sp" />
@@ -294,20 +294,20 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/passwordText3"
+                                android:id="@+id/locationText"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Password:"
+                                android:text="Location:"
                                 android:textColor="@color/MidnightBlue"
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/changeText3"
+                                android:id="@+id/locationTexxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Change"
+                                android:text="Ariana,Borjlouzir"
                                 android:textAlignment="viewEnd"
                                 android:textColor="#5B5B5B"
                                 android:textSize="18sp" />
@@ -332,7 +332,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Password:"
+                                android:text="Date Of Birth"
                                 android:textColor="@color/MidnightBlue"
                                 android:textSize="18sp" />
 
@@ -341,7 +341,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Change"
+                                android:text="25/10/1999"
                                 android:textAlignment="viewEnd"
                                 android:textColor="#5B5B5B"
                                 android:textSize="18sp" />

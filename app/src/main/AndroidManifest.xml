@@ -13,16 +13,19 @@
         android:theme="@style/Theme.AndroidProject"
         tools:targetApi="31">
         <activity
-            android:name=".PositionActivity"
+            android:name=".ProfileUser.ChangePasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".EducationActivity"
+            android:name=".ProfileUser.PositionActivity"
             android:exported="false" />
         <activity
-            android:name=".EditProfileUserActivity"
+            android:name=".ProfileUser.EducationActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileUserActivity"
+            android:name=".ProfileUser.EditProfileUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileUser.ProfileUserActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
