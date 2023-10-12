@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+            <ScrollView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MesOffreActivity2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="-2dp"
+                        app:cardCornerRadius="8dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <androidx.appcompat.widget.Toolbar
+                                android:id="@+id/toolbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:background="?attr/colorPrimary"
+                                app:layout_constraintTop_toTopOf="parent">
+
+
+                                <ImageView
+                                    android:id="@+id/profileLogo"
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="start"
+                                    android:clickable="true"
+                                    android:contentDescription="Logo de profil"
+                                    android:focusable="true"
+                                    android:src="@drawable/name" />
+
+
+                                <TextView
+                                    android:id="@+id/toolbarTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Mes Offres"
+                                    android:textColor="#fff"
+                                    android:textSize="18sp" />
+                                <ImageView
+                                    android:id="@+id/home"
+                                    android:layout_width="46dp"
+                                    android:layout_height="46dp"
+                                    android:layout_gravity="end"
+                                    android:clickable="true"
+                                    android:contentDescription="home"
+                                    android:focusable="true"
+                                    android:src="@drawable/home1" />
+
+                            </androidx.appcompat.widget.Toolbar>
+
+                            <!-- CardView pour envelopper la barre de recherche -->
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/searchCardView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="16dp"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <androidx.appcompat.widget.SearchView
+                                    android:id="@+id/searchView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:queryHint="Rechercher par nom" />
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/firstCardView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintTop_toBottomOf="@+id/searchCardView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Code d'Offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="12345" />
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Titre De L'offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Web and Mobile Devoloper " />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Etat: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Disponible " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nombre De Places : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Date D'Expiration : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12-12-2023 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="end">
+
+
+                                        <ImageButton
+                                            android:id="@+id/delete"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Supprimer"
+                                            android:cropToPadding="true"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/delete" />
+
+                                        <ImageButton
+                                            android:id="@+id/modifie1"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:accessibilityLiveRegion="polite"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Modifier"
+                                            android:cropToPadding="false"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/modifie" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/thirdCardView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintTop_toBottomOf="@+id/firstCardView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Code d'Offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="12345" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Titre De L'offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Web and Mobile Devoloper " />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Etat: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Disponible " />
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nombre De Places : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Date D'Expiration : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12-12-2023 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="end">
+
+
+                                        <ImageButton
+                                            android:id="@+id/supprimer"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Supprimer"
+                                            android:cropToPadding="true"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/delete" />
+
+                                        <ImageButton
+                                            android:id="@+id/modifie2"
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:accessibilityLiveRegion="polite"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Modifier"
+                                            android:cropToPadding="false"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/modifie" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/fordCardView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintTop_toBottomOf="@+id/firstCardView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <!-- Ligne de données statiques pour la première offre -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Code d'Offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="12345" />
+                                    </LinearLayout>
+
+                                    <!-- Ajoutez un LinearLayout pour chaque paire de données -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Titre De L'offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Web and Mobile Devoloper " />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Etat: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Disponible " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nombre De Places : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Date D'Expiration : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12-12-2023 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="end">
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Supprimer"
+                                            android:cropToPadding="true"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/delete" />
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:accessibilityLiveRegion="polite"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Modifier"
+                                            android:cropToPadding="false"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/modifie" />
+                                    </LinearLayout>
+                                    <!-- Ajoutez d'autres paires de données de la même manière -->
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <!-- CardView pour la troisième offre -->
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/secondCardView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintTop_toBottomOf="@+id/thirdCardView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <!-- Ligne de données statiques pour la première offre -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Code d'Offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="12345" />
+                                    </LinearLayout>
+
+                                    <!-- Ajoutez un LinearLayout pour chaque paire de données -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Titre De L'offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Web and Mobile Devoloper " />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Etat: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Disponible " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nombre De Places : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Date D'Expiration : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12-12-2023 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="end">
+
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Supprimer"
+                                            android:cropToPadding="true"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/delete" />
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:accessibilityLiveRegion="polite"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Modifier"
+                                            android:cropToPadding="false"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/modifie" />
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <!-- CardView pour la quatrième offre -->
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/fourthCardView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintTop_toBottomOf="@+id/secondCardView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <!-- Ligne de données statiques pour la première offre -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Code d'Offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="12345" />
+                                    </LinearLayout>
+
+                                    <!-- Ajoutez un LinearLayout pour chaque paire de données -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Titre De L'offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Web and Mobile Devoloper " />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Etat: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Disponible " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nombre De Places : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Date D'Expiration : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12-12-2023 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="end">
+
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Supprimer"
+                                            android:cropToPadding="true"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/delete" />
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:accessibilityLiveRegion="polite"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Modifier"
+                                            android:cropToPadding="false"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/modifie" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/fifthCardView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintTop_toBottomOf="@+id/fourthCardView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <!-- Ligne de données statiques pour la première offre -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Code d'Offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="12345" />
+                                    </LinearLayout>
+
+                                    <!-- Ajoutez un LinearLayout pour chaque paire de données -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Titre De L'offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Web and Mobile Devoloper " />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Etat: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Disponible " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nombre De Places : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 7 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Date D'Expiration : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 06-12-2023 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="end">
+
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Supprimer"
+                                            android:cropToPadding="true"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/delete" />
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:accessibilityLiveRegion="polite"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Modifier"
+                                            android:cropToPadding="false"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/modifie" />
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                            <!-- CardView pour la sixième offre -->
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/sixthCardView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintTop_toBottomOf="@+id/fifthCardView"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="16dp">
+
+                                    <!-- Ligne de données statiques pour la première offre -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Code d'Offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="12345" />
+                                    </LinearLayout>
+
+                                    <!-- Ajoutez un LinearLayout pour chaque paire de données -->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Titre De L'offre: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Web and Mobile Devoloper " />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Etat: "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" Disponible " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nombre De Places : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginBottom="8dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Date D'Expiration : "
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=" 12-12-2023 " />
+                                    </LinearLayout>
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="end">
+
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Supprimer"
+                                            android:cropToPadding="true"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/delete" />
+
+                                        <ImageButton
+                                            android:layout_width="40dp"
+                                            android:layout_height="40dp"
+                                            android:accessibilityLiveRegion="polite"
+                                            android:adjustViewBounds="true"
+                                            android:backgroundTintMode="add"
+                                            android:contentDescription="Modifier"
+                                            android:cropToPadding="false"
+                                            android:scaleType="centerInside"
+                                            android:src="@drawable/modifie" />
+                                    </LinearLayout>
+                                    <!-- Ajoutez d'autres paires de données de la même manière -->
+
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+

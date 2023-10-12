@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize">
+
+        <!-- Ajoutez un logo de profil ou une icône à gauche -->
+        <ImageView
+            android:id="@+id/profileLogo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/name"
+            android:contentDescription="Logo de profil" />
+
+        <!-- Titre de la Toolbar -->
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Profile"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp" />
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_gravity="end"
+            android:clickable="true"
+            android:contentDescription="home"
+            android:focusable="true"
+            android:src="@drawable/home1" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Votre formulaire de profil -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/back">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/firstNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Prénom"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/phoneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Téléphone"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mot de passe"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/confirmPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirmez le mot de passe"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/companyNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom de l'entreprise" />
+
+
+            <Spinner
+                android:id="@+id/secteurActiviteSpinner"
+                android:layout_width="-260dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:hint="Sélectionner un secteur d'activité"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/companyNameEditText" />
+
+            <Spinner
+                android:id="@+id/regionSpinner"
+                android:layout_width="-260dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:hint="Sélectionner une région"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secteurActiviteSpinner" />
+
+
+            <EditText
+                android:id="@+id/delaiExpirationEditText"
+                android:layout_width="-2dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="Date de Fondation "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TypecontratSpinner" />
+
+            <TextView
+                android:id="@+id/typeoffre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="12dp"
+                android:text="Les Types Offre  :"
+                android:textColor="#101010"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/typeoffre" />
+            <CheckBox
+                android:id="@+id/checkboxInternship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:text="STAGE"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typeoffre" />
+
+            <CheckBox
+                android:id="@+id/checkboxJob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:text="EMPLOI"
+                app:layout_constraintStart_toEndOf="@+id/checkboxInternship"
+                app:layout_constraintTop_toBottomOf="@+id/checkboxInternship"
+       />
+
+
+
+
+            <EditText
+                android:id="@+id/addressEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Adresse" />
+
+            <EditText
+                android:id="@+id/companyWebsiteEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Site de l'entreprise"
+                android:inputType="textWebEditText" />
+
+            <Button
+                android:id="@+id/selectLogoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Sélectionner le logo de l'entreprise" />
+
+            <ImageView
+                android:id="@+id/companyLogoImageView"
+                android:layout_width="291dp"
+                android:layout_height="142dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="1dp"
+                android:contentDescription="Logo de l'entreprise"
+                android:src="@drawable/logo" />
+
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valider" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

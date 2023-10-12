@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="tn.esprit.androidproject">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +20,37 @@
         android:theme="@style/Theme.AndroidProject"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ModifieOffreActivity2"
+            android:label="Modifie Offre">
+        </activity>
+
+
+        <activity
+            android:name=".MesOffreActivity2"
             android:exported="false" />
+        <activity
+            android:name=".AfficheProfileActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".AddAnnonceActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".acceuilprofileActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".AddProfileActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_profile2"
+            android:theme="@style/Theme.AndroidProject" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
