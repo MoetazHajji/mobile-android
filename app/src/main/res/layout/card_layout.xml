@@ -38,9 +38,9 @@
 
                 <ImageView
                     android:id="@+id/icon"
-                    android:layout_marginBottom="10dp"
-                    android:layout_width="150dp"
-                    android:layout_height="130dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="130dp"
+                    android:layout_height="110dp"
                     android:src="@drawable/questionmark"
                     app:layout_constraintBottom_toBottomOf="@+id/fixed_layout"
                     app:layout_constraintEnd_toEndOf="@+id/fixed_layout"
@@ -48,6 +48,8 @@
                     app:layout_constraintStart_toStartOf="@+id/fixed_layout"
                     app:layout_constraintTop_toTopOf="@+id/fixed_layout"
                     app:layout_constraintVertical_bias="1.0" />
+
+                <!-- This is ImageButton for the expansion icon -->
 
                 <TextView
                     android:id="@+id/semaine"
@@ -59,10 +61,10 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/fixed_layout"
                     app:layout_constraintEnd_toEndOf="@+id/fixed_layout"
-                    app:layout_constraintHorizontal_bias="0.926"
+                    app:layout_constraintHorizontal_bias="0.773"
                     app:layout_constraintStart_toStartOf="@+id/fixed_layout"
                     app:layout_constraintTop_toTopOf="@+id/fixed_layout"
-                    app:layout_constraintVertical_bias="0.198" />
+                    app:layout_constraintVertical_bias="0.137" />
 
                 <TextView
                     android:id="@+id/list_of_subjects"
@@ -74,12 +76,11 @@
                     android:textSize="20dp"
                     app:layout_constraintBottom_toBottomOf="@+id/fixed_layout"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.878"
+                    app:layout_constraintHorizontal_bias="0.75"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/semaine"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="1.0" />
 
-                <!-- This is ImageButton for the expansion icon -->
                 <ImageButton
                     android:id="@+id/arrow_button"
                     android:layout_width="wrap_content"
@@ -120,7 +121,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/questionmark" />
+                        android:src="@drawable/quiz_icon" />
 
                     <TextView
                         android:id="@+id/quiz1"
@@ -135,6 +136,7 @@
 
 
             </LinearLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

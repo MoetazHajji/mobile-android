@@ -17,6 +17,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import tn.esprit.androidproject.R;
 
@@ -28,12 +29,17 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
 
 
 
-    private  ArrayList<TestModel> testModelArrayList;
+    private  List<TestModel> testModelArrayList;
     private Context context;
+    private ArrayList<TestModel> filteredList;
+
+
     public TestAdapter( Context context, ArrayList<TestModel> testModelArrayList) {
         this.context = context;
         this.testModelArrayList = testModelArrayList;
     }
+
+
 
 
     @NonNull
@@ -112,5 +118,10 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
         }
     }
 
+    public void updateData(ArrayList<TestModel> filteredList) {
+        testModelArrayList.clear();
+        testModelArrayList.addAll(filteredList);
+        notifyDataSetChanged();
+    }
 
 }
