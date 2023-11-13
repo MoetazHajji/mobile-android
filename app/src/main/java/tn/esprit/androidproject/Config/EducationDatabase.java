@@ -2,6 +2,7 @@ package tn.esprit.androidproject.Config;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -79,5 +80,16 @@ public class EducationDatabase extends SQLiteOpenHelper {
             Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
             System.out.println("success");
         }
+    }
+
+    public Cursor readAllData(){
+        String query = "SELECT * FROM Education";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if (db != null){
+            cursor = db.rawQuery(query,null);
+
+        }
+        return cursor;
     }
 }

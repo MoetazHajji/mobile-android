@@ -13,6 +13,7 @@ import tn.esprit.androidproject.R;
 public class ProfileUserActivity extends AppCompatActivity {
     Button editProfile;
     TextView changePassword;
+    TextView ViewEducationList,ViewPositionList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +22,26 @@ public class ProfileUserActivity extends AppCompatActivity {
 
         editProfile = findViewById(R.id.editProfileButton);
         changePassword = findViewById(R.id.changePwd);
+        ViewEducationList = findViewById(R.id.viewEducationListText);
+        ViewPositionList = findViewById(R.id.viewPositionList);
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileUserActivity.this, EditProfileUserActivity.class);
+                startActivity(intent);
+            }
+        });
+        ViewEducationList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileUserActivity.this, EducationListActivity.class);
+                startActivity(intent);
+            }
+        });
+        ViewPositionList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileUserActivity.this, PositionsListActivity.class);
                 startActivity(intent);
             }
         });
