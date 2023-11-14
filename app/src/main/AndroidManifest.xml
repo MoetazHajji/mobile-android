@@ -20,11 +20,19 @@
         android:theme="@style/Theme.AndroidProject"
         tools:targetApi="31">
         <activity
+            android:name=".ModifyProfileActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".OffreAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".ListOffreActivity3"
+            android:exported="false"
+            android:label="@string/title_activity_list_offre3"
+            android:theme="@style/Theme.AndroidProject" />
+        <activity
             android:name=".ModifieOffreActivity2"
-            android:label="Modifie Offre">
-        </activity>
-
-
+            android:label="Modifie Offre" />
         <activity
             android:name=".MesOffreActivity2"
             android:exported="false" />

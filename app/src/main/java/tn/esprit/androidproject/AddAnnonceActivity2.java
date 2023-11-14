@@ -1,21 +1,30 @@
 package tn.esprit.androidproject;
 
+
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.net.Uri;
 import android.os.Bundle;
 
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,220 +34,179 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
+import android.os.Bundle;
 
 public class AddAnnonceActivity2 extends AppCompatActivity {
 
+    private String[] secteurActiviteChoices = {
+            "Sélectionner un secteur d'activité",
+            "ENTRAÎNEMENT",
+            "RESSOURCES HUMAINES",
+            "INGÉNIERIE",
+            "COMMERCIALISATION",
+            "L'INFORMATIQUE",
+            "TÉLÉCOMMUNICATIONS",
+            "INDUSTRIE",
+            "INFORMATIQUE",
+            "COMMERCE",
+            "VENTE",
+            "TRANSPORT",
+            "SCIENCE",
+            "RECHERCHE",
+            "IMMOBILIER",
+            "CONTRÔLE DE QUALITÉ",
+            "ACHATS_PROCUEMENT",
+            "MÉDICAMENTS",
+            "SERVICES CLIENTS",
+            "Médias_JOURNALISME",
+            "GESTION",
+            "LÉGAL",
+            "ASSURANCE",
+            "INSTALLATION_MAINTENANCE_REPAIR",
+            "SANTÉ",
+            "CONCEPTION"
+    };
+    private String[] regionChoices = {
+            "Sélectionner une region",
+            "Béja",
+            "Ben_Arous",
+            "Bizerte",
+            "Gabes",
+            "Gafsa",
+            "Jendouba",
+            "Kairouan",
+            "Kasserine",
+            "Kebili",
+            "Manouba",
+            "Kef",
+            "Mahdia",
+            "Médenine",
+            "Monastir",
+            "Nabeul",
+            "Sfax",
+            "Sidi_Bouzid",
+            "Siliana",
+            "Sousse",
+            "Tataouine",
+            "Tozeur",
+            "Tunis",
+            "Zaghouan"};
 
+    private String[] typeContratChoices = {
+            "Sélectionner un type contrat",
+            "CDD",
+            "CDI",
+            "KARAMA",
+            "SEASONAL",
+            "ALTERNATIION",
+            "FREELANCER"};
+    private String[] typeOffreChoices = {
+            "Sélectionner un type d'offre",
+            "emploi"
+            , "Stage"};
+    private String[] EtatOffreChoices = {
+            "Sélectionner une etat d'offre",
+            "EXPIRé",
+            "EN ATTENTE",
+            "PUBLIE"};
 
-
-    private ImageView companyLogoImageView;
-    private Button selectLogoButton;
-
-    private String selectedDate;
-    private static final int PICK_IMAGE_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_annonce2);
 
-        selectLogoButton = findViewById(R.id.selectLogoButton);
-        selectLogoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, PICK_IMAGE_REQUEST);
-            }
-        });
-
-        Button validerButton = findViewById(R.id.validerAnnonceButton);
-        validerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(AddAnnonceActivity2.this);
-                builder.setMessage("Êtes-vous sûr de vouloir valider?");
-                builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        Toast.makeText(AddAnnonceActivity2.this, "Félicitations Votre Offre est Publié", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                builder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        Toast.makeText(AddAnnonceActivity2.this, "OK", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-            }
-        });
-
-        ImageView profileLogo = findViewById(R.id.profileLogo);
-
-        profileLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddAnnonceActivity2.this, AfficheProfileActivity2.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
-
-        ImageView homephoto = findViewById(R.id.home);
-
-        homephoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddAnnonceActivity2.this, acceuilprofileActivity2.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-        Spinner secteurActiviteSpinner = findViewById(R.id.secteurActiviteSpinner);
-        String[] secteurActiviteOptions = { "Sélectionner Secteur D'Activité","CENTRE D'APPELS",
-                "ENTRAÎNEMENT",
-                "RESSOURCES HUMAINES",
-                "INGÉNIERIE",
-                "COMMERCIALISATION",
-                "L'INFORMATIQUE",
-                "TÉLÉCOMMUNICATIONS",
-                "INDUSTRIE",
-                "INFORMATIQUE",
-                "COMMERCE",
-                "VENTE",
-                "TRANSPORT",
-                "SCIENCE",
-                "RECHERCHE",
-                "IMMOBILIER",
-                "CONTRÔLE DE QUALITÉ",
-                "ACHATS_PROCUEMENT",
-                "MÉDICAMENTS",
-                "SERVICES CLIENTS",
-                "Médias_JOURNALISME",
-                "GESTION",
-                "LÉGAL",
-                "ASSURANCE",
-                "INSTALLATION_MAINTENANCE_REPAIR",
-                "SANTÉ",
-                "CONCEPTION"
-
-               };
-        ArrayAdapter<String> secteurActiviteAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, secteurActiviteOptions);
-        secteurActiviteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        secteurActiviteSpinner.setAdapter(secteurActiviteAdapter);
-
-
-
-        Spinner regionSpinner = findViewById(R.id.regionSpinner);
-        String[] regionSpinnerOptions = { "Sélectionner  région" ,"Ariana",
-                "Béja",
-                "Ben_Arous",
-                "Bizerte",
-                "Gabes",
-                "Gafsa",
-                "Jendouba",
-                "Kairouan",
-                "Kasserine",
-                "Kebili",
-                "Manouba",
-                "Kef",
-                "Mahdia",
-                "Médenine",
-                "Monastir",
-                "Nabeul",
-                "Sfax",
-                "Sidi_Bouzid",
-                "Siliana",
-                "Sousse",
-                "Tataouine",
-                "Tozeur",
-                "Tunis",
-                "Zaghouan"};
-        ArrayAdapter<String> RegionAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, regionSpinnerOptions);
-        RegionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        regionSpinner.setAdapter(RegionAdapter);
-
-
-        Spinner TypecontratSpinner = findViewById(R.id.TypecontratSpinner);
-        String[] TypecontratOptions = { "Sélectionner Contrat","CIVP",
-               "CDD",
-                "CDI",
-                "KARAMA",
-                "SEASONAL",
-                "ALTERNATIION",
-                "FREELANCER"};
-        ArrayAdapter<String> TypecontratAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, TypecontratOptions);
-
-        TypecontratAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        TypecontratSpinner.setAdapter(TypecontratAdapter);
-
-
-
-
-
-
-
-
-
-
-
-        final EditText delaiExpirationEditText = findViewById(R.id.delaiExpirationEditText);
-        delaiExpirationEditText.setOnClickListener(new View.OnClickListener() {
+        Button validerAnnonceButton = findViewById(R.id.validerAnnonceButton);
+        validerAnnonceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDatePicker(delaiExpirationEditText);
+
+                EditText titreEditText = findViewById(R.id.typeAnnonceEditText);
+                EditText entrepriseEditText = findViewById(R.id.nameEditText);
+                Spinner secteurActiviteSpinner = findViewById(R.id.secteurActiviteSpinner);
+                Spinner regionSpinner = findViewById(R.id.regionSpinner);
+                Spinner TypecontratSpinner = findViewById(R.id.TypecontratSpinner);
+
+                EditText delaiExpirationEditText = findViewById(R.id.delaiExpirationEditText);
+                Spinner typeEmploiSpinner = findViewById(R.id.Typeemploi);
+                Spinner etatOffreSpinner = findViewById(R.id.etatoffre);
+                EditText descriptionEditText = findViewById(R.id.texteAnnonceEditText);
+
+                // Utilisez les valeurs des champs de formulaire pour créer l'objet Offre
+                Offre offre = new Offre(
+                        titreEditText.getText().toString(),
+                        entrepriseEditText.getText().toString(),
+                        secteurActiviteSpinner.getSelectedItem().toString(),
+                        regionSpinner.getSelectedItem().toString(),
+                        TypecontratSpinner.getSelectedItem().toString(),
+                        delaiExpirationEditText.getText().toString(),
+                        descriptionEditText.getText().toString(),
+                        typeEmploiSpinner.getSelectedItem().toString(),
+                        etatOffreSpinner.getSelectedItem().toString()
+                );
+
+                ajouterOffreDansBaseDeDonnees(offre);
             }
         });
+
+        Spinner secteurActiviteSpinner = findViewById(R.id.secteurActiviteSpinner);
+        Spinner regionSpinner = findViewById(R.id.regionSpinner);
+        Spinner typeContratSpinner = findViewById(R.id.TypecontratSpinner);
+        Spinner typeEmploiSpinner = findViewById(R.id.Typeemploi);
+        Spinner etatOffreSpinner = findViewById(R.id.etatoffre);
+        setUpSpinner(secteurActiviteSpinner, secteurActiviteChoices);
+        setUpSpinner(typeContratSpinner, typeContratChoices);
+        setUpSpinner(regionSpinner, regionChoices);
+        setUpSpinner(typeEmploiSpinner, typeOffreChoices);
+        setUpSpinner(etatOffreSpinner, EtatOffreChoices);
     }
 
-    private void showDatePicker(final EditText editText) {
-        final Calendar calendar = Calendar.getInstance();
-        final int year = calendar.get(Calendar.YEAR);
-        final int month = calendar.get(Calendar.MONTH);
-        final int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
-                selectedDate = String.format(Locale.getDefault(), "%04d-%02d-%02d", year, monthOfYear + 1, dayOfMonth);
-                editText.setText(selectedDate);
-            }
-        }, year, month, day);
-
-        datePickerDialog.show();
-
-
+    private void setUpSpinner(Spinner spinner, String[] choices) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, choices);
+        spinner.setAdapter(adapter);
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
-            Uri selectedImageUri = data.getData();
+    private void ajouterOffreDansBaseDeDonnees(Offre offre) {
+        MaBaseDeDonneesHelper dbHelper = new MaBaseDeDonneesHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.execSQL(MaBaseDeDonneesHelper.CREER_TABLE_OFFRE);
 
-            companyLogoImageView.setImageURI(selectedImageUri);
+        SQLiteStatement statement = db.compileStatement("INSERT INTO MaTable " +
+                "(titre_offre, nom_entreprise, secteur_activite, region, type_contrat, delai_expiration, Type_Offre, etat_Offre, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        statement.bindString(1, offre.getTitreOffre());
+        statement.bindString(2, offre.getNomEntreprise());
+        statement.bindString(3, offre.getSecteurActivite());
+        statement.bindString(4, offre.getRegion());
+        statement.bindString(5, offre.getTypeContrat());
+        statement.bindString(6, offre.getDelaiExpiration());
+        statement.bindString(7, offre.getTypeOffre());
+        statement.bindString(8, offre.getEtatoffre());
+        statement.bindString(9, offre.getDescription());
+
+        long newRowId = statement.executeInsert();
+
+        if (newRowId == -1) {
+            Log.e("MaApplication", "Erreur lors de l'insertion de l'offre. ID: " + newRowId);
+            Toast.makeText(this, "Erreur lors de l'ajout de l'offre. Veuillez réessayer.", Toast.LENGTH_SHORT).show();
+        } else {
+            Log.d("MaApplication", "Offre ajoutée avec succès! Nouvelle ligne ID: " + newRowId);
+            Toast.makeText(this, "Offre ajoutée avec succès!", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(AddAnnonceActivity2.this, ListOffreActivity3.class);
+            intent.putExtra("TITRE_OFFRE", offre.getTitreOffre());
+            intent.putExtra("NOM_ENTREPRISE", offre.getNomEntreprise());
+            intent.putExtra("Secteur_Activite", offre.getSecteurActivite());
+            intent.putExtra("REGION", offre.getRegion());
+            intent.putExtra("TYPE_CONTRAT", offre.getTypeContrat());
+            intent.putExtra("DELAI_EXPIRATION", offre.getDelaiExpiration());
+            intent.putExtra("TYPE_OFFRE", offre.getTypeOffre());
+            intent.putExtra("ETAT_OFFRE", offre.getEtatoffre());
+            intent.putExtra("DESCRIPTION", offre.getDescription());
+
+            startActivity(intent);
         }
+
+        db.close();
     }
-        }
+}

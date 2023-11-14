@@ -1,0 +1,127 @@
+<!-- activity_display_offre.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/customToolbarImageView"
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:background="@drawable/job4" />
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/titreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="257dp"
+        android:textColor="@android:color/black"
+
+        android:textSize="18sp"
+        tools:text="                 titre: " />
+
+    <TextView
+        android:id="@+id/entrepriseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titreTextView"
+        android:layout_marginTop="7dp"
+        android:textColor="@android:color/black"
+
+        android:textSize="18sp"
+        tools:text="                 Nom de l'entreprise : " />
+
+    <TextView
+        android:id="@+id/secteurActiviteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/entrepriseTextView"
+        android:layout_marginTop="3dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="                secteur activite : " />
+
+    <TextView
+        android:id="@+id/regionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/secteurActiviteTextView"
+        android:layout_marginTop="-1dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="                Région : " />
+
+    <TextView
+        android:id="@+id/typeContratTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/regionTextView"
+        android:layout_marginTop="3dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="                Type de contrat : " />
+
+    <TextView
+        android:id="@+id/delaiExpirationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/typeContratTextView"
+        android:layout_marginTop="0dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="                Délai d'expiration : " />
+
+    <TextView
+        android:id="@+id/typeoffreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/delaiExpirationTextView"
+        android:layout_marginTop="6dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="                type offre : " />
+
+    <TextView
+        android:id="@+id/etatoffreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/typeoffreTextView"
+        android:layout_marginTop="13dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="                Etat offre : " />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etatoffreTextView"
+        android:layout_marginTop="6dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:text="                Délai d'expiration : " />
+
+    <ImageView
+        android:id="@+id/retourimageTextView"
+        android:layout_width="410dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/descriptionTextView"
+
+        android:layout_marginTop="-6dp"
+        android:background="@drawable/welc" />
+    <!-- Add more TextViews for additional data if needed -->
+
+</RelativeLayout>

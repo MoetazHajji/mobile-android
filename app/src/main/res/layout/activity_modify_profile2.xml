@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -26,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Profile"
+            android:text=" Modifier Profile"
             android:textColor="#fff"
             android:textSize="18sp"
             android:layout_marginStart="8dp"
@@ -59,70 +60,51 @@
             android:padding="16dp">
 
             <EditText
-                android:id="@+id/firstNameEditText"
+                android:id="@+id/firstNameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Prénom"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/emailEditText"
+                android:id="@+id/phoneTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:inputType="textEmailAddress" />
+                android:hint="tel"
+
+                />
 
             <EditText
-                android:id="@+id/phoneEditText"
+                android:id="@+id/editTextNomEntreprise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Téléphone"
-                android:inputType="phone" />
+                android:hint="nom entreprise"
+               />
 
             <EditText
-                android:id="@+id/passwordEditText"
+                android:id="@+id/editTextSecteurActivite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Mot de passe"
+                android:hint="secteur dactivite"
                 android:inputType="textPassword" />
 
             <EditText
-                android:id="@+id/confirmPasswordEditText"
+                android:id="@+id/pwdEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Confirmez le mot de passe"
+                android:hint=" le mot de passe"
                 android:inputType="textPassword" />
 
             <EditText
-                android:id="@+id/companyNameEditText"
+                android:id="@+id/editTextRegion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nom de l'entreprise" />
+                android:hint="Region" />
 
-
-            <Spinner
-                android:id="@+id/secteurActiviteSpinner"
-                android:layout_width="-260dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:hint="Sélectionner un secteur d'activité"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/companyNameEditText" />
-
-            <Spinner
-                android:id="@+id/regionSpinner"
-                android:layout_width="-260dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:hint="Sélectionner une région"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/secteurActiviteSpinner" />
 
 
             <EditText
-                android:id="@+id/datefondationEditText"
+                android:id="@+id/editTextDateFondation"
                 android:layout_width="-2dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -136,13 +118,13 @@
 
 
             <EditText
-                android:id="@+id/addressEditText"
+                android:id="@+id/editTextAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Adresse" />
 
             <EditText
-                android:id="@+id/companyWebsiteEditText"
+                android:id="@+id/editTextSite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Site de l'entreprise"
@@ -158,12 +140,15 @@
                 android:contentDescription="Logo de l'entreprise"
                 android:src="@drawable/logo" />
 
-
             <Button
-                android:id="@+id/submitButton"
+                android:id="@+id/updateImageBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Valider" />
+                android:text="Mettre à jour le profil" />
         </LinearLayout>
+
+
+
+
     </ScrollView>
 </RelativeLayout>

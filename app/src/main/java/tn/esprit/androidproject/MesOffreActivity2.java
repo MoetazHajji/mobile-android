@@ -1,102 +1,123 @@
 package tn.esprit.androidproject;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
+import androidx.cardview.widget.CardView;
 
 public class MesOffreActivity2 extends AppCompatActivity {
 
+    private MaBaseDeDonneesHelper dbHelper;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mes_offre2);
 
+        dbHelper = new MaBaseDeDonneesHelper(this);
 
+        List<Offre> offresList = dbHelper.getAllOffres();
 
-        ImageView profileLogo = findViewById(R.id.profileLogo);
+        ListView listView = findViewById(R.id.listView);
 
-        profileLogo.setOnClickListener(new View.OnClickListener() {
+        ArrayAdapter<Offre> adapter = new ArrayAdapter<Offre>(this, android.R.layout.simple_list_item_1, offresList) {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MesOffreActivity2.this, AfficheProfileActivity2.class);
-                startActivity(intent);
-            }
-        });
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView textView = view.findViewById(android.R.id.text1);
 
-        ImageButton modifierButton = findViewById(R.id.modifie1);
-
-        modifierButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MesOffreActivity2.this,ModifieOffreActivity2.class);
-                    startActivity(intent);
+                Offre offre = getItem(position);
+                if (offre != null) {
+                    textView.setText(offre.getDisplayText());
                 }
-            });
 
+                return view;
+            }
+        };
 
-            ImageButton deleteButton = findViewById(R.id.delete);
+        listView.setAdapter(adapter);
 
-        deleteButton.setOnClickListener(new View.OnClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                showDeleteConfirmationDialog();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Offre selectedOffre = offresList.get(position);
+
+
+                showOptionsDialog(selectedOffre);
             }
         });
-        ImageView homephoto = findViewById(R.id.home);
-
-        homephoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MesOffreActivity2.this, acceuilprofileActivity2.class);
-                startActivity(intent);
-            }
-        });
-
-
     }
 
-    private void showDeleteConfirmationDialog() {
+    private void showOptionsDialog(final Offre selectedOffre) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Confirmation de suppression");
-        builder.setMessage("Voulez-vous vraiment supprimer cette offre ?");
+        builder.setTitle("Options d'Offre");
+        builder.setMessage("Sélectionnez une option :");
 
-        builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                boolean deletionSuccessful = deleteOffer();
-                if (deletionSuccessful) {
-                    Toast.makeText(MesOffreActivity2.this, "Offre supprimée avec succès", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MesOffreActivity2.this, "Échec de la suppression de l'offre", Toast.LENGTH_SHORT).show();
-                }
-            }
+        builder.setPositiveButton("Modifier", (dialog, which) -> {
+            Intent intent = new Intent(MesOffreActivity2.this, ModifieOffreActivity2.class);
+             getIntent().getParcelableExtra("selectedOffre");
+
+            startActivity(intent);
+            dialog.dismiss();
         });
 
-        builder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
+        builder.setNegativeButton("Supprimer", (dialog, which) -> {
+
+            showConfirmationDialog(selectedOffre);
+            dialog.dismiss();
         });
 
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        builder.setNeutralButton("Annuler", (dialog, which) -> dialog.dismiss());
+
+        builder.create().show();
     }
 
-    private boolean deleteOffer() {
+    private void showConfirmationDialog(final Offre selectedOffre) {
+        AlertDialog.Builder confirmationBuilder = new AlertDialog.Builder(this);
+        confirmationBuilder.setTitle("Confirmation");
+        confirmationBuilder.setMessage("Voulez-vous vraiment supprimer cette offre?");
 
-        boolean deletionSuccessful = true;
-        
+        confirmationBuilder.setPositiveButton("Oui", (dialog, which) -> {
 
-        return deletionSuccessful;
+            dbHelper.deleteOffre(selectedOffre);
+            refreshList();
+            Toast.makeText(getApplicationContext(), "Supprimer", Toast.LENGTH_SHORT).show();
+        });
+
+        confirmationBuilder.setNegativeButton("Non", (dialog, which) -> {
+
+            Toast.makeText(getApplicationContext(), "Opération annulée", Toast.LENGTH_SHORT).show();
+        });
+
+        confirmationBuilder.create().show();
     }
-
+    private void refreshList() {
+        Log.d("MesOffreActivity2", "Refreshing list...");
+        List<Offre> updatedOffresList = dbHelper.getAllOffres();
+        ArrayAdapter<Offre> updatedAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, updatedOffresList);
+        ListView updatedListView = findViewById(R.id.listView);
+        updatedListView.setAdapter(updatedAdapter);
+    }
 }

@@ -40,7 +40,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="12dp"
-            android:text="Modifier Offre"
+            android:text="Modifier  Offre"
             android:textColor="#fff"
             android:textSize="18sp" />
 
@@ -72,17 +72,13 @@
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="64dp"
         android:hint="Nom Entreprise "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/typeAnnonceEditText"
         tools:ignore="MissingConstraints" />
-
-
-
-
 
 
 
@@ -95,9 +91,7 @@
         android:hint="Sélectionner un secteur d'activité"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameEditText"
-        />
-
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 
     <Spinner
         android:id="@+id/regionSpinner"
@@ -108,16 +102,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secteurActiviteSpinner" />
+
     <Spinner
         android:id="@+id/TypecontratSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Sélectionner une région"
+        android:hint="Sélectionner un type contrat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regionSpinner"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/regionSpinner" />
+
+    <Spinner
+        android:id="@+id/Typeemploi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Sélectionner le type de l'Offre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delaiExpirationEditText" />
+
+    <Spinner
+        android:id="@+id/etatoffre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Sélectionner l'état de l'offre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Typeemploi" />
+
+
     <EditText
         android:id="@+id/delaiExpirationEditText"
         android:layout_width="0dp"
@@ -128,94 +144,28 @@
         app:layout_constraintTop_toBottomOf="@+id/TypecontratSpinner"
         android:layout_margin="16dp"/>
 
-    <CheckBox
-        android:id="@+id/checkboxInternship"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="STAGE"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/delaiExpirationEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
-
-    <CheckBox
-        android:id="@+id/checkboxJob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EMPLOI"
-        app:layout_constraintStart_toEndOf="@+id/checkboxInternship"
-        app:layout_constraintTop_toBottomOf="@+id/delaiExpirationEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
-    <CheckBox
-        android:id="@+id/checkboxPublished"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PUBLIÉ"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxJob"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
-
-    <CheckBox
-        android:id="@+id/checkboxPending"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EN ATTENTE"
-        app:layout_constraintStart_toEndOf="@+id/checkboxPublished"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxJob"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
-
-    <CheckBox
-        android:id="@+id/checkboxExpired"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EXPIRÉ"
-        app:layout_constraintStart_toEndOf="@+id/checkboxPending"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxJob"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
-
-
-    <Button
-        android:id="@+id/selectLogoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_gravity="center"
-        android:layout_marginTop="2dp"
-        android:text="Sélectionner le logo de l'entreprise"
-
-        app:layout_constraintBottom_toTopOf="@+id/texteAnnonceEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxExpired"
-        app:layout_constraintVertical_bias="0.092"
-        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/texteAnnonceEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+
+        android:layout_marginTop="160dp"
         android:hint="Description"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectLogoButton" />
+        app:layout_constraintTop_toBottomOf="@+id/delaiExpirationEditText" />
 
     <Button
         android:id="@+id/validerAnnonceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-
         android:text="Valider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texteAnnonceEditText"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/texteAnnonceEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

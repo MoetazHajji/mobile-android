@@ -9,9 +9,6 @@
     android:descendantFocusability="beforeDescendants"
     tools:context=".AfficheProfileActivity2">
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="beforeDescendants"
@@ -33,17 +30,12 @@
             android:background="@drawable/circle_border" />
 
         <TextView
+            android:id="@+id/firstNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="  IndustryX.0 "
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#FFFFFF"
-            android:textDirection="inherit"
-            android:textIsSelectable="false"
-            android:textSize="28sp"
-            android:textStyle="bold|italic" />
+            android:text="     Profile Connecter  "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -110,11 +102,14 @@
                     android:scaleType="centerInside"
                     android:src="@drawable/name" />
                 <TextView
-                    android:id="@+id/NomCompanieView"
+                    android:id="@+id/companyTextView"
+                    android:layout_below="@+id/firstNameTextView"
+                    android:layout_marginTop="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="                      Nom de l'entreprise: IndustryX.0"
-                    android:textStyle="bold" />
+                    android:text=" "
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -140,12 +135,13 @@
                     android:src="@drawable/siteweb" />
 
                 <TextView
-                    android:id="@+id/SiteWebView"
-                    android:layout_width="357dp"
+                    android:id="@+id/companyWebsiteTextView"
+                    android:layout_below="@+id/addresTextView"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="                       SiteWeb: https://industryx0.pro/"
-                    android:autoLink="web"
-                    android:textStyle="bold" />
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -171,17 +167,14 @@
                     android:scaleType="centerInside"
                     android:src="@drawable/adress" />
                 <TextView
-                    android:id="@+id/RegionView"
-                    android:layout_width="357dp"
+                    android:id="@+id/regionActiviteTextView"
+                    android:layout_below="@+id/secteurActiviteTextView"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="                      Region: Ariana  "
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/AddresseView"
-                    android:layout_width="357dp"
-                    android:layout_height="wrap_content"
-                    android:text="                      Addresse: lac 1 the dot  "
-                    android:textStyle="bold" />
+                    android:text="Région :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
 
             </LinearLayout>
@@ -208,13 +201,15 @@
                     android:cropToPadding="true"
                     android:scaleType="centerInside"
                     android:src="@drawable/secteur" />
-
                 <TextView
-                    android:id="@+id/SecteuRActivitéView"
-                    android:layout_width="357dp"
+                    android:id="@+id/secteurActiviteTextView"
+                    android:layout_below="@+id/companyTextView"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="                   SecteuRActivité: Devlommepent Web   "
-                    android:textStyle="bold" />
+                    android:text="Secteur d'activité :"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -240,12 +235,16 @@
                     android:scaleType="centerInside"
                     android:src="@drawable/email" />
 
-                <TextView
-                    android:id="@+id/emailTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="                      Email:    Industry.X.0@gmail.com"
-                    android:textStyle="bold" />
+                  <TextView
+                      android:id="@+id/emailTextView"
+                      android:layout_below="@+id/firstNameTextView"
+                      android:layout_marginTop="8dp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+
+                      android:textSize="18sp"
+                      android:textStyle="bold"
+                      tools:ignore="DuplicateIds" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -271,15 +270,22 @@
                     android:scaleType="centerInside"
                     android:src="@drawable/phone" />
 
+
                 <TextView
-                    android:id="@+id/telephoneTextView"
-                    android:layout_width="357dp"
-                    android:layout_height="36dp"
-                    android:text="                      Téléphone: +201622523982   "
-                    android:textStyle="bold" />
+                    android:id="@+id/phoneTextView"
+                    android:layout_below="@+id/firstNameTextView"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -299,38 +305,80 @@
                     android:background="#F6EFEF"
                     android:cropToPadding="true"
                     android:scaleType="centerInside"
-                    android:src="@drawable/description" />
+                    android:src="@drawable/date" />
 
                 <TextView
-                    android:id="@+id/DescriptionView"
-                    android:layout_width="320dp"
-                    android:layout_height="wrap_content"
-                    android:text="                      Description: Industry X.0 Redefines what truly mean · Mastering your Processes, · Improving Quality · and Strengthen Safety · CIPA is a digital platform harnessing the Valorisation des données. Industry X.0 fournit des solutions ...   "
+                    android:id="@+id/datefondationTextView"
+                    android:layout_width="357dp"
+                    android:layout_height="36dp"
+                    android:text="  DateFondation:   "
                     android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="37dp"
+                    android:layout_height="36dp"
+                    android:adjustViewBounds="false"
+                    android:background="#F6EFEF"
+                    android:cropToPadding="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/adress" />
+
+                <TextView
+                    android:id="@+id/addresTextView"
+                    android:layout_width="357dp"
+                    android:layout_height="36dp"
+                    android:text=" Adresse:   "
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="130dp"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
             <ImageView
-                android:id="@+id/googleImage"
+                android:id="@+id/deleteImage"
                 android:layout_width="43dp"
                 android:layout_height="43dp"
                 android:layout_marginRight="50dp"
-                android:src="@drawable/google" />
-            />
+                android:src="@drawable/supp" />
+
             <ImageView
-                android:id="@+id/facebookImage"
+                android:id="@+id/updateImageBtn"
                 android:layout_width="43dp"
                 android:layout_height="43dp"
-                android:src="@drawable/facebook" />
-            />
+                android:src="@drawable/mod" />
+
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:text="Déconnecter" />
 
     </LinearLayout>
 </RelativeLayout>
