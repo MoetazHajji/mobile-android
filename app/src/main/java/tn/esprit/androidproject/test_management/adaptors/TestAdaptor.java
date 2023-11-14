@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
@@ -16,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 import tn.esprit.androidproject.R;
+import tn.esprit.androidproject.test_management.Test;
 import tn.esprit.androidproject.test_management.models.TestModel;
 import tn.esprit.androidproject.test_management.activities.EditActivity;
 import tn.esprit.androidproject.test_management.constants.Constants;
@@ -71,6 +73,37 @@ public class TestAdaptor extends RecyclerView.Adapter<TestAdaptor.MyViewHolder> 
         }
     }
 
+//    public static class TestViewHolder extends RecyclerView.ViewHolder {
+//        CardView cardView;
+//
+//        public TestViewHolder(View itemView) {
+//            super(itemView);
+//            cardView = itemView.findViewById(R.id.base_cardview);
+//
+//            // Set OnClickListener on the CardView
+//            cardView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    // Get the position of the clicked item
+//                    int position = getAdapterPosition();
+//
+//                    // Assuming you have a TestModelList in your adapter
+//                    TestModel clickedTest = tTestList.get(position);
+//                    // Call the method to navigate to another class
+//                    navigateToAnotherClass(view.getContext(), clickedTest);
+//                }
+//            });
+//        }
+//
+//        private void navigateToAnotherClass(Context context, TestModel testModel) {
+//            // Use an Intent to start the new activity
+//            Intent intent = new Intent(context, Test.class);
+//            // Pass any data you need to the new activity using intent.putExtra if necessary
+//            intent.putExtra("testModelId", testModel.getIdTest());
+//            context.startActivity(intent);
+//        }
+//    }
+
     @Override
     public int getItemCount() {
         if (tTestList== null) {
@@ -90,10 +123,22 @@ public class TestAdaptor extends RecyclerView.Adapter<TestAdaptor.MyViewHolder> 
         return tTestList;
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    private OnItemClickListener mListener;
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
+
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView testName, testDate;
         ImageView editImage;
         AppDatabase mDb;
+        CardView cardView;
 
         MyViewHolder(@NonNull final View itemView) {
             super(itemView);
@@ -101,6 +146,7 @@ public class TestAdaptor extends RecyclerView.Adapter<TestAdaptor.MyViewHolder> 
             testName = itemView.findViewById(R.id.test_name_tv);
             testDate = itemView.findViewById(R.id.test_date_tv);
             editImage = itemView.findViewById(R.id.icon);
+            cardView = itemView.findViewById(R.id.base_cardview);
             editImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -108,6 +154,19 @@ public class TestAdaptor extends RecyclerView.Adapter<TestAdaptor.MyViewHolder> 
                     Intent i = new Intent(context, EditActivity.class);
                     i.putExtra(Constants.UPDATE_Test_Id, elementId);
                     context.startActivity(i);
+                }
+            });
+
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
                 }
             });
         }

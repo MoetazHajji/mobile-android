@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -18,6 +20,7 @@ import java.util.List;
 
 import tn.esprit.androidproject.LoginActivity;
 import tn.esprit.androidproject.R;
+import tn.esprit.androidproject.test_management.Test;
 import tn.esprit.androidproject.test_management.adaptors.TestAdapter;
 import tn.esprit.androidproject.test_management.adaptors.TestAdaptor;
 import tn.esprit.androidproject.test_management.database.AppDatabase;
@@ -34,15 +37,50 @@ public class MainTest extends AppCompatActivity {
 
     ImageButton logoutButton;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main_test);
         RecyclerView testYo = findViewById(R.id.idTestyo);
-//        searchEditText = findViewById(R.id.search);
+       searchEditText = findViewById(R.id.search);
         logoutButton = findViewById(R.id.logoutButton); // Initialize the logout button
 
+
+        mRecyclerView = findViewById(R.id.idTestyo);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Initialize the adapter and attach it to the RecyclerView
+        adapter = new TestAdaptor(this);
+        mRecyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new TestAdaptor.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(MainTest.this, Test.class);
+                startActivity(intent);
+            }
+        });
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Not needed for this implementation
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Filter the list as the user types in the search EditText
+                filterTests(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Not needed for this implementation
+            }
+        });
+
+        mDb = AppDatabase.getInstance(getApplicationContext());
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,15 +91,34 @@ public class MainTest extends AppCompatActivity {
         });
 
         retrieveTasks();
-
-        mRecyclerView = findViewById(R.id.idTestyo);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        // Initialize the adapter and attach it to the RecyclerView
-        adapter = new TestAdaptor(this);
-        mRecyclerView.setAdapter(adapter);
-        mDb = AppDatabase.getInstance(getApplicationContext());
     }
+
+    private void filterTests(String searchText) {
+        // Retrieve all tests from the database
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                final List<TestModel> allTests = mDb.testDao().loadAllTests();
+
+                // Filter the tests based on the search query
+                List<TestModel> filteredTests = new ArrayList<>();
+                for (TestModel test : allTests) {
+                    if (test.getTestName().toLowerCase().contains(searchText.toLowerCase())) {
+                        filteredTests.add(test);
+                    }
+                }
+
+                // Update the UI with the filtered tests
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.setTasks(filteredTests);
+                    }
+                });
+            }
+        });
+    }
+
 
     private void showLogoutConfirmationDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
