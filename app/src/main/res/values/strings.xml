@@ -1,8 +1,17 @@
 <resources>
-    <string name="app_name">AndroidProject</string>
+
     <string name="password">Password</string>
     <string name="username">Username</string>
+    <string name="titre">Titre</string>
+    <string name="description">Description</string>
+    <string name="lieu">Lieu</string>
+
     <string name="forgetpassword">Do You Have a Problem Signing in?</string>
     <string name="alreadyhvacc">Already Have Account? Signin</string>
     <string name="donthvacc">Don\'t Have Account? Signup</string>
+    <string name="app_name">Mochito</string>
+    <string name="spinner_title">Mochito</string>
+    <string name="type_offer_label">Type Offer</string>
+    <string name="type_contract_label">Type Contract</string>
+
 </resources>

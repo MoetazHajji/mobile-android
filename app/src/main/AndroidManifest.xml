@@ -10,8 +10,44 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidProject"
+        android:theme="@style/AppTheme"
         tools:targetApi="31">
+        <activity
+            android:name=".UpdateActivity"
+            android:parentActivityName=".ListFormationBack"
+            android:exported="false" />
+        <activity
+            android:name=".ListFormationBack"
+            android:label="Toutes Les Formations"
+
+            android:exported="false" />
+        <activity
+            android:name=".AddFormat"
+            android:exported="false" />
+        <activity
+            android:name=".ScoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CertifActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SetsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ApplyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.SplashScrennActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CustomListView"
+            android:exported="false" />
+        <activity
+            android:name=".ListFormation"
+            android:exported="false" />
+        <activity
+            android:name=".AddFormationActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
