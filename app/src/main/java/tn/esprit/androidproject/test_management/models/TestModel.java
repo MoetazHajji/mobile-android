@@ -1,23 +1,28 @@
-package tn.esprit.androidproject.test_management;
+package tn.esprit.androidproject.test_management.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+import java.util.Date;
 import java.util.List;
 
+@Entity(tableName = "test")
 public class TestModel {
 
+    @PrimaryKey(autoGenerate = true)
     private int idTest;
+    @ColumnInfo(name ="test_name")
     private String testName;
-    private String testDate;
-    private List<String> quizs;
+    @ColumnInfo(name ="test_date")
+    private Date testDate;
 
+    @ColumnInfo(name ="test_image")
     private byte[] quizImage;
 
-    public List<String> getQuizs() {
-        return quizs;
-    }
 
-    public void setQuizs(List<String> quizs) {
-        this.quizs = quizs;
-    }
+
 
 
     public byte[] getQuizImage() {
@@ -28,25 +33,22 @@ public class TestModel {
         this.quizImage = quizImage;
     }
 
-    public TestModel(int idTest, String testName, String testDate, byte[] quizImage) {
+    @Ignore
+    public TestModel(int idTest, String testName, Date testDate, byte[] quizImage) {
         this.idTest = idTest;
         this.testName = testName;
         this.testDate = testDate;
         this.quizImage = quizImage;
     }
 
-    public TestModel(int idTest, String testName, String testDate, List<String> quizs) {
-        this.idTest = idTest;
-        this.testName = testName;
-        this.testDate = testDate;
-        this.quizs = quizs;
-    }
-    public TestModel(String testName, String testDate) {
+
+    @Ignore
+    public TestModel(String testName, Date testDate) {
         this.testName = testName;
         this.testDate = testDate;
     }
 
-    public TestModel(int idTest, String testName, String testDate) {
+    public TestModel(int idTest, String testName, Date testDate) {
         this.idTest = idTest;
         this.testName = testName;
         this.testDate = testDate;
@@ -68,11 +70,11 @@ public class TestModel {
         this.testName = testName;
     }
 
-    public String getTestDate() {
+    public Date getTestDate() {
         return testDate;
     }
 
-    public void setTestDate(String testDate) {
+    public void setTestDate(Date testDate) {
         this.testDate = testDate;
     }
 }

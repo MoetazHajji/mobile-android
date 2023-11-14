@@ -5,7 +5,53 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background_violet"
-    tools:context=".test_management.MainTest">
+    tools:context=".test_management.activities.MainTest">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:minHeight="?attr/actionBarSize">
+
+            <!-- Add a logo or icon to the left if needed -->
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="QUIZ'S"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="12dp" />
+
+            <!-- Add a logout button -->
+            <ImageButton
+                android:id="@+id/logoutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_logout_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="12dp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -16,7 +62,7 @@
 
         <EditText
             android:id="@+id/search"
-            android:layout_width="190dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:hint="search for tests here.."
             android:layout_marginTop="30dp"
@@ -29,8 +75,9 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="130dp"
-            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="40dp"
 
             android:src="@drawable/questions" />
 

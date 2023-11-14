@@ -25,11 +25,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/colorPrimary"
-
                     android:elevation="4dp"
                     android:minHeight="?attr/actionBarSize">
 
-                    <!-- Ajoutez un logo de profil ou une icône à gauche -->
+                    <!-- Add a logo or icon to the left if needed -->
 
                     <TextView
                         android:id="@+id/toolbarTitle"
@@ -43,7 +42,20 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="12dp" />
 
+                    <!-- Add a logout button -->
+                    <ImageButton
+                        android:id="@+id/logoutButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_logout_24"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="12dp"/>
+
                 </androidx.appcompat.widget.Toolbar>
+
 
 
 
@@ -57,7 +69,7 @@
 
                 >
 
-                <EditText
+            <!--    <EditText
                     android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:hint="search for tests here.."
@@ -67,16 +79,14 @@
                 <SearchView
                     android:layout_width="20dp"
                     android:layout_height="match_parent"/>
+                    -->
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="130dp"
             android:layout_height="100dp"
-
+            android:layout_margin="10dp"
             android:src="@drawable/questions" />
-
-
-
 
         </LinearLayout>
 
@@ -91,6 +101,7 @@
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#D8BFD8"
                 android:layout_gravity="center"
+
                 app:cardElevation="4dp"
                 app:cardCornerRadius="10dp"
                 android:background="@drawable/rounded_cardview_background"

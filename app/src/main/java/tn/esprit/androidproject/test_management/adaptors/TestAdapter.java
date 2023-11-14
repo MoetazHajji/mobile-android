@@ -1,10 +1,9 @@
-package tn.esprit.androidproject.test_management;
+package tn.esprit.androidproject.test_management.adaptors;
 
 import android.content.Context;
 import android.content.Intent;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +15,14 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import tn.esprit.androidproject.R;
-
+import tn.esprit.androidproject.test_management.Test;
+import tn.esprit.androidproject.test_management.models.TestModel;
 
 
 public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
@@ -54,9 +56,13 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull TestAdapter.ViewHolder holder, int position) {
 
+
         TestModel model = testModelArrayList.get(position);
+        Date testDate = model.getTestDate();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // You can choose the desired date format
+        String formattedDate = dateFormat.format(testDate);
         holder.testName.setText(model.getTestName());
-        holder.testDate.setText(model.getTestDate());
+        holder.testDate.setText(formattedDate);
 
 
         holder.arrow.setOnClickListener(view -> {
@@ -105,9 +111,9 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            testName = itemView.findViewById(R.id.semaine);
+            testName = itemView.findViewById(R.id.test_name_tv);
 
-            testDate = itemView.findViewById(R.id.quiz1);
+            testDate = itemView.findViewById(R.id.test_date_tv);
 
 
 

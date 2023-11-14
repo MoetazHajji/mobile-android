@@ -13,10 +13,17 @@
         android:theme="@style/Theme.AndroidProject"
         tools:targetApi="31">
         <activity
+            android:name=".test_management.TheMain"
+            android:exported="false" />
+        <activity
+            android:name=".test_management.activities.EditActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:exported="false" />
+        <activity
             android:name=".test_management.LeMain"
             android:exported="false" />
         <activity
-            android:name=".test_management.MainTest"
+            android:name=".test_management.activities.MainTest"
             android:exported="false" />
         <activity
             android:name=".test_management.DisplayTest"
@@ -30,11 +37,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+
         <activity
-            android:name=".LoginActivity"
+            android:name=".test_management.activities.DaMainActivity"
             android:exported="false" />
         <activity
-            android:name=".test_management.TheMain"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

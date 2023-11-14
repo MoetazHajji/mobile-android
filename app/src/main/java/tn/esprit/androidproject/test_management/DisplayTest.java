@@ -11,10 +11,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import tn.esprit.androidproject.R;
 
-public class DisplayTest extends AppCompatActivity {
+public class DisplayTest { /* extends AppCompatActivity {
 
     DBmain dbmain;
     SQLiteDatabase sqLiteDatabase;
@@ -39,7 +40,7 @@ public class DisplayTest extends AppCompatActivity {
         while (cursor.moveToNext()){
             int id=cursor.getInt(0);
             String testN=cursor.getString(1);
-            String testD=cursor.getString(2);
+            Date testD=cursor.getString(2);
             byte[]quiz=cursor.getBlob(3);
             models.add(new TestModel(id,testN, testD, quiz));
         }
@@ -50,6 +51,6 @@ public class DisplayTest extends AppCompatActivity {
 
     private void findId() {
         recyclerView=findViewById(R.id.rv);
-    }
+    }*/
 
 }

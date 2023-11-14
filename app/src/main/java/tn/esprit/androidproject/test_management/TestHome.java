@@ -1,17 +1,23 @@
 package tn.esprit.androidproject.test_management;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import tn.esprit.androidproject.LoginActivity;
 import tn.esprit.androidproject.R;
 
 public class TestHome extends AppCompatActivity {
@@ -31,17 +37,30 @@ public class TestHome extends AppCompatActivity {
 
     TextView quiz1;
 
+    ImageButton logoutButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_home);
         quiz1 = findViewById(R.id.quiz1);
 
+        logoutButton = findViewById(R.id.logoutButton); // Initialize the logout button
+
+
         quiz1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TestHome.this, Test.class);
                 startActivity(intent);
+            }
+        });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle logout action here
+                showLogoutConfirmationDialog();
             }
         });
 
@@ -119,8 +138,37 @@ public class TestHome extends AppCompatActivity {
             }
         });*/
 
-
-
-
     }
+
+    private void showLogoutConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Logout");
+        builder.setMessage("Are you sure you want to logout?");
+        builder.setPositiveButton("Logout", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // User clicked the "Logout" button
+                logout();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // User clicked the "Cancel" button, do nothing
+            }
+        });
+        builder.show();
+    }
+
+
+    private void logout() {
+        // Implement the logout logic here, such as clearing user session, updating preferences, etc.
+        // You might want to redirect the user to the login screen or perform any necessary cleanup.
+        // For example:
+        Intent intent = new Intent(TestHome.this, LoginActivity.class);
+        startActivity(intent);
+        finish(); // Finish the current activity to prevent going back to it using the back button
+    }
+
+
 }

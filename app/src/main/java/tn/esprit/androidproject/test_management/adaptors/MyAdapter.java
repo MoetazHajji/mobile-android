@@ -1,10 +1,9 @@
-package tn.esprit.androidproject.test_management;
+package tn.esprit.androidproject.test_management.adaptors;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.ColorSpace;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import tn.esprit.androidproject.R;
+import tn.esprit.androidproject.test_management.models.TestModel;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 

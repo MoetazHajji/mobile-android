@@ -13,11 +13,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "BookLibrary.db";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String TABLE_NAME = "my_library";
-    private static final String COLUMN_ID = "_id";
-    private static final String COLUMN_TITLE = "book_title";
-    private static final String COLUMN_AUTHOR = "book_author";
-    private static final String COLUMN_PAGES = "book_pages";
+    private static final String TABLE_NAME = "test";
+    private static final String COLUMN_ID = "_idTest";
+    private static final String COLUMN_TESTNAME = "test_name";
+    private static final String COLUMN_TESTDATE = "test_date";
+    private static final String COLUMN_QUIZIMAGE = "quiz_image";
 
     DataBaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -27,11 +27,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        String query = "CREATE TABLE " + TABLE_NAME +
+                " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_TESTNAME + " TEXT, " +
+                COLUMN_TESTDATE + " TEXT, " +
+                COLUMN_QUIZIMAGE + " TEXT);";
+        sqLiteDatabase.execSQL(query);
 
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
     }
 }
