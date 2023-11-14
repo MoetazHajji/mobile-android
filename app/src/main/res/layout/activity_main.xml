@@ -34,7 +34,7 @@
             android:src="@drawable/name"
             />
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/usernameLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="11"
@@ -60,7 +60,7 @@
         />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/passwordLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -84,7 +84,7 @@
             android:textSize="16dp"
             />
         <TextView
-            android:id="@+id/sing"
+            android:id="@+id/signupInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/donthvacc"

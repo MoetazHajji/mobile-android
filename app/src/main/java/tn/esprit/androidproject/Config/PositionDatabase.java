@@ -89,4 +89,40 @@ public class PositionDatabase extends SQLiteOpenHelper {
         System.out.println("Data :" + cursor);
         return cursor;
     }
+
+    public void updateData(String row_id, String title, String companyName, String location,String startDate,String endDate,String industry,String description){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_TITLE, title);
+        cv.put(COLUMN_COMPANYNAME, companyName);
+        cv.put(COLUMN_LOCATION, location);
+        cv.put(COLUMN_ENDDATE, endDate);
+        cv.put(COLUMN_STARTDATE, startDate);
+        cv.put(COLUMN_INDUSTRY, industry);
+        cv.put(COLUMN_DESCRIPTION, description);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void deleteOneRow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void deleteAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM User");
+    }
+
 }
